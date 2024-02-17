@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-sneakers/static/css/main.b379dbb2.css",
-    "main.js": "/react-sneakers/static/js/main.beb6c8b7.js",
+    "main.js": "/react-sneakers/static/js/main.9b3ae06f.js",
     "index.html": "/react-sneakers/index.html",
     "main.b379dbb2.css.map": "/react-sneakers/static/css/main.b379dbb2.css.map",
-    "main.beb6c8b7.js.map": "/react-sneakers/static/js/main.beb6c8b7.js.map"
+    "main.9b3ae06f.js.map": "/react-sneakers/static/js/main.9b3ae06f.js.map"
   },
   "entrypoints": [
     "static/css/main.b379dbb2.css",
-    "static/js/main.beb6c8b7.js"
+    "static/js/main.9b3ae06f.js"
   ]
 }
