@@ -1,4 +1,4 @@
-# Link to viev
+# Link to view
 https://react-sneakers-f76ddfd63633.herokuapp.com/
 ## Available Scripts
 
