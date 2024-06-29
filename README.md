@@ -1,5 +1,5 @@
 # Link to view
-[https://react-sneakers-f76ddfd63633.herokuapp.com/](https://react-sneakers-jet.vercel.app/)
+[https://react-sneakers-jet.vercel.app/](https://react-sneakers-jet.vercel.app/)
 ## Available Scripts
 
 In the project directory, you can run:
