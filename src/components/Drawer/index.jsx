@@ -10,7 +10,11 @@ function Drawer({ onClose, onRemove, items = [], opened, setCartOpened }) {
   const [orderId, setOrderId] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const { cartItems, setCartItems } = React.useContext(AppContext);
-  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
+
+  const totalPrice =
+    cartItems && cartItems.length > 0
+      ? cartItems.reduce((sum, obj) => obj.price + sum, 0)
+      : 0;
   const onClickOrder = async () => {
     try {
       setIsLoading(true);
@@ -23,13 +27,9 @@ function Drawer({ onClose, onRemove, items = [], opened, setCartOpened }) {
       setIsOrderComplete(true);
       setCartItems([]);
 
-      for (let i = 0; i < cartItems.length; i++) {
-        const item = cartItems[i];
-        await axios.delete(
-          `https://65b918dab71048505a8a2da9.mockapi.io/cart/` + item.id
-        );
-        delay(1000);
-      }
+      setCartItems([]);
+      localStorage.setItem("cart", JSON.stringify([]));
+      delay(1000);
     } catch (error) {
       alert("Ошибка при создании заказа :(");
     }
@@ -117,6 +117,9 @@ function Drawer({ onClose, onRemove, items = [], opened, setCartOpened }) {
                 ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
                 : "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ"
             }
+            btnText={isOrderComplete ? "Понял!" : "Вернуться назад"}
+            isArrow={isOrderComplete ? false : true}
+            setIsOrderComplete={setIsOrderComplete}
           />
         )}
       </div>

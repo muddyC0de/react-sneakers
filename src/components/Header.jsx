@@ -4,12 +4,15 @@ import AppContext from "../context";
 
 function Header(props) {
   const { cartItems } = React.useContext(AppContext);
-  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
+  const totalPrice =
+    cartItems && cartItems.length > 0
+      ? cartItems.reduce((sum, obj) => obj.price + sum, 0)
+      : 0;
   return (
     <header className="d-flex justify-between align-center p-40">
       <Link to="/">
         <div className="d-flex align-center">
-          <img width={40} height={40} src="img/logo.png" alt="Logo"></img>
+          <img width={40} height={40} src="/img/logo.png" alt="Logo"></img>
           <div>
             <h3 className="text-uppercase">React Sneakers</h3>
             <p className="opacity-5">Магазин лучших кросовок</p>

@@ -1,7 +1,7 @@
 {
   "name": "react-sneakers",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@formkit/auto-animate": "^0.8.1",
     "@testing-library/jest-dom": "^5.17.0",

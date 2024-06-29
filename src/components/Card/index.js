@@ -12,7 +12,7 @@ function Card({
   loading = false,
 }) {
   const { isItemAdded, isItemFavorite } = React.useContext(AppContext);
-  const obj = { id, parentId: id, name, imageUrl, price };
+  const obj = { id, name, imageUrl, price };
   const onClickPlus = () => {
     onPlus(obj);
   };

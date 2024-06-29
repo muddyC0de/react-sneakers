@@ -2,7 +2,16 @@ import React from "react";
 import AppContext from "../context";
 import { Link } from "react-router-dom";
 
-const Info = ({ title, image, description, link, width = 120 }) => {
+const Info = ({
+  title,
+  image,
+  description,
+  link,
+  btnText = "Вернуться",
+  isArrow = true,
+  setIsOrderComplete,
+  width = 120,
+}) => {
   const { setCartOpened } = React.useContext(AppContext);
   return (
     <div className="cartEmpty d-flex align-center justify-center flex-column flex">
@@ -12,9 +21,18 @@ const Info = ({ title, image, description, link, width = 120 }) => {
         {description}
       </p>
       <Link to={link}>
-        <button onClick={() => setCartOpened(false)} className="greenButton">
-          <img src="img/arrow.svg" alt="Arrow" />
-          Вернуться назад
+        <button
+          onClick={() => {
+            if (btnText !== "Понял!") {
+              setCartOpened(false);
+            } else {
+              setIsOrderComplete(false);
+            }
+          }}
+          className="greenButton"
+        >
+          {isArrow ? <img src="img/arrow.svg" alt="Arrow" /> : ""}
+          {btnText}
         </button>
       </Link>
     </div>
