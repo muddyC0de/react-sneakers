@@ -1,7 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Link to view
+https://react-sneakers-f76ddfd63633.herokuapp.com/
 ## Available Scripts
 
 In the project directory, you can run:
